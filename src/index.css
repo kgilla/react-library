@@ -9,12 +9,14 @@ html {
 }
 
 body {
-  background: #222;
+  background: #333;
   margin: 0;
   color: #222;
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
+
+/* navbar */
 
 nav {
   display: flex;
@@ -46,6 +48,8 @@ nav button:hover {
   filter: brightness(90%);
 }
 
+/* library */
+
 .library {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,6 +57,8 @@ nav button:hover {
   grid-gap: 2rem;
   margin: 4rem;
 }
+
+/* books */
 
 .book {
   display: flex;
@@ -62,13 +68,14 @@ nav button:hover {
   border-radius: 0.25rem;
   background: #444;
   overflow: hidden;
+  box-shadow: 3px 3px 5px 6px #000;
 }
 
 .book-header {
   width: 100%;
   display: grid;
   padding: 0.5rem;
-  border-bottom: 2px solid #000;
+  border-bottom: 0.1rem solid #000;
   background: #7b1fa2;
 }
 
@@ -79,9 +86,10 @@ nav button:hover {
 }
 
 .book-info {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: #fff;
 }
@@ -89,6 +97,7 @@ nav button:hover {
 .book-buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  border-top: 0.1rem solid #000;
 }
 
 .not-read,
@@ -102,16 +111,27 @@ nav button:hover {
   font-size: 1rem;
 }
 
+.not-read:hover,
+.read:hover {
+  filter: brightness(90%);
+}
+
 .read {
   background: #2e7d32;
 }
 
 .book-delete {
   grid-area: 1/5/2/6;
-  background: none;
+  background: #333;
   border: none;
-  color: red;
+  color: #d32f2f;
   font-size: 1rem;
+  font-weight: bold;
+}
+
+.book-delete:hover {
+  background: #d32f2f;
+  color: #fff;
 }
 
 .form-shroud {
@@ -120,6 +140,8 @@ nav button:hover {
   width: 100vw;
   background: rgba(0, 0, 0, 0.7);
 }
+
+/* book form */
 
 form {
   position: fixed;
@@ -135,6 +157,17 @@ form {
   border: 0.1rem solid #666;
   border-radius: 0.25rem;
   background: #666;
+}
+
+.form-close {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  background: #333;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 form h2 {
@@ -162,7 +195,7 @@ form label {
   color: #fff;
 }
 
-form button {
+#create-book {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #666;

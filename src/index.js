@@ -63,6 +63,7 @@ class BookCreator extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormClose = this.handleFormClose.bind(this);
   }
 
   handleInputChange(e) {
@@ -77,10 +78,17 @@ class BookCreator extends React.Component {
     this.props.showForm();
   }
 
+  handleFormClose() {
+    this.props.showForm();
+  }
+
   render() {
     return (
       <div className="form-shroud">
         <form>
+          <button className="form-close" onClick={this.handleFormClose}>
+            X
+          </button>
           <h2>Add A Berk!</h2>
           <div className="form-section">
             <label htmlFor="title">Book Title</label>
@@ -109,7 +117,9 @@ class BookCreator extends React.Component {
             ></input>
           </div>
 
-          <button onClick={this.handleSubmit}>Create Book</button>
+          <button id="create-book" onClick={this.handleSubmit}>
+            Create Book
+          </button>
         </form>
       </div>
     );
