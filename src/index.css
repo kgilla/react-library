@@ -1,13 +1,177 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html {
+  font-size: 18px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  margin: 0;
+  color: #222;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  border-bottom: 2px solid #000;
+  background: #7b1fa2;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+nav button {
+  height: 100%;
+  width: 10rem;
+  padding: 5px;
+  border: none;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  background: #fff;
+  font-size: 1rem;
+  color: #222;
+}
+
+nav button:hover {
+  filter: brightness(90%);
+}
+
+.library {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 2rem;
+  margin: 4rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+  border-radius: 0.25rem;
+  background: #444;
+  overflow: hidden;
+}
+
+.book-header {
+  width: 100%;
+  display: grid;
+  padding: 0.5rem;
+  border-bottom: 2px solid #000;
+  background: #7b1fa2;
+}
+
+.book-header h2 {
+  place-self: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.book-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.not-read,
+.read {
+  grid-area: 1/1/2/5;
+  width: 100%;
+  padding: 0.5rem;
+  background: #666;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.read {
+  background: #2e7d32;
+}
+
+.book-delete {
+  grid-area: 1/5/2/6;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1rem;
+}
+
+.form-shroud {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+form {
+  position: fixed;
+  width: 30%;
+  height: 70%;
+  left: 35%;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border: 0.1rem solid #666;
+  border-radius: 0.25rem;
+  background: #666;
+}
+
+form h2 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.25rem;
+  background: #333;
+  color: #fff;
+}
+
+form label {
+  color: #fff;
+}
+
+form button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #666;
+  border-radius: 0.25rem;
+  background: #43a047;
+  color: #fff;
+  font-size: 1rem;
+}
+
+form button:hover {
+  filter: brightness(90%);
 }
